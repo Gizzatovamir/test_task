@@ -1,6 +1,6 @@
 FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get update && apt install -y git python3-pip ffmpeg libsm6 libxext6 g++ python3-dev nvidia-container-toolkit && pip install tyro open_clip_torch wandb h5py openai hydra-core && pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
+RUN apt-get update && apt-get update && apt install -y git python3-pip ffmpeg libsm6 libxext6 g++ python3-dev nvidia-container-toolkit cuda-drivers && pip install tyro open_clip_torch wandb h5py openai hydra-core && pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
 
 RUN git clone https://github.com/krrish94/chamferdist.git &&  \
     git clone https://github.com/gradslam/gradslam.git &&  \
